@@ -5,6 +5,8 @@ import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 import fr.vocinur.notmyfirstproject.network.Request;
+import fr.vocinur.notmyfirstproject.network.TcpClient;
+import fr.vocinur.notmyfirstproject.network.TcpServer;
 import fr.vocinur.notmyfirstproject.threading.MyFirstThread;
 
 public class Main extends ApplicationAdapter {
@@ -14,17 +16,16 @@ public class Main extends ApplicationAdapter {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		System.out.println("Vibrate! ");
-
-		
-
-
-		Music music = Gdx.audio.newMusic(Gdx.files.getFileHandle("K C'EST UNE CONSTANTE PTN !!! .mp3", Files.FileType.Internal));
-		music.setVolume(0.1f);
-		music.play();
-
-		new Request();
-		new MyFirstThread();
+//		System.out.println("Vibrate! ");
+//
+//		Music music = Gdx.audio.newMusic(Gdx.files.getFileHandle("K C'EST UNE CONSTANTE PTN !!! .mp3", Files.FileType.Internal));
+//		music.setVolume(0.1f);
+//		music.play();
+//
+//		new Request();
+//		new MyFirstThread();
+		new TcpServer();
+		new TcpClient();
 	}
 
 	@Override
